@@ -9,8 +9,8 @@ const app = express();
 
 app.use(
   cors({
-    origin:
-      "https://mern-e-commerce-jm1v-ovdz8mpc0-sunny-kadivars-projects.vercel.app"
+    origin: process.env.FRONTEND_URL,
+    credentials: true
   })
 );
 app.use(express.json());
