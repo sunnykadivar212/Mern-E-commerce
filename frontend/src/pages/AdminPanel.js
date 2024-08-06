@@ -6,13 +6,13 @@ import ROLE from "../common/role";
 
 const AdminPanel = () => {
   const user = useSelector((state) => state?.user?.user);
-  const navigate= useNavigate();
+  const navigate = useNavigate();
 
-  useEffect(()=>{
-    if(user?.role !== ROLE.ADMIN){
-      navigate("/")
+  useEffect(() => {
+    if (user?.role !== ROLE.ADMIN) {
+      navigate("/");
     }
-  },user);
+  }, user);
 
   return (
     <div className="min-h-[calc(100vh-120px)] md:flex hidden">
@@ -35,13 +35,20 @@ const AdminPanel = () => {
 
         <div>
           <nav className="grid p-4">
-            <Link to={"all-users"} className="px-2 py-1 hover:bg-slate-200">All User</Link>
-            <Link to={"all-products"} className="px-2 py-1 hover:bg-slate-200">All Products</Link>
+            <Link to={"all-users"} className="px-2 py-1 hover:bg-slate-200">
+              All User
+            </Link>
+            <Link to={"all-products"} className="px-2 py-1 hover:bg-slate-200">
+              All Products
+            </Link>
+            <Link to={"all-order"} className="px-2 py-1 hover:bg-slate-200">
+              All Orders
+            </Link>
           </nav>
         </div>
       </aside>
       <main className="w-full h-full p-2">
-        <Outlet/>
+        <Outlet />
       </main>
     </div>
   );
