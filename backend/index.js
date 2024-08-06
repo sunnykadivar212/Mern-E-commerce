@@ -7,7 +7,12 @@ const router = require("./routes");
 
 const app = express();
 
-app.use(cors());
+app.use(
+  cors({
+    origin:
+      "https://mern-e-commerce-jm1v-ovdz8mpc0-sunny-kadivars-projects.vercel.app"
+  })
+);
 app.use(express.json());
 app.use(cookieParser());
 app.use("/api", router);
